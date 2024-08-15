@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "lint": "eslint src",
-    "precommit": "npm run test -- --watchAll=false && npm run lint:ts && npm run lint:css"
+    "precommit": "npm run test -- --watchAll=false && npm run lint"
   },
   "eslintConfig": {
     "extends": [
