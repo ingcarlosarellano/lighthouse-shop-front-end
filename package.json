@@ -10,6 +10,7 @@
     "@types/node": "^16.18.105",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -20,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "lint": "eslint src",
+    "precommit": "npm run test -- --watchAll=false && npm run lint:ts && npm run lint:css"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +42,30 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@stylistic/eslint-plugin-ts": "^2.6.2",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "prettier": "3.3.3",
+    "tailwindcss": "^3.4.10",
+    "typescript-eslint": "^8.1.0"
+  },
+  "husky": {
+   "hooks": {
+     "pre-commit": "npm run precommit"
+   }
+ },
+ "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/index.tsx",
+      "/src/reportWebVitals.ts"
     ]
   }
 }
