@@ -1,1 +1,1 @@
-npm run test -- --watchAll=false && npm run lint
+npm test -- --watchAll=false --coverage --coverageThreshold.total=100 && npm run lint
